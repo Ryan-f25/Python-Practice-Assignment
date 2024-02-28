@@ -1,0 +1,146 @@
+print("hello")
+
+#1. List manipulation (loops, if-else, for-each):
+
+#Even/Odd Separator:
+#This code uses an array of numbers 1-9 then sees if they are even or odd
+#By using the modulus feature and seeing the remainder when divided by 2
+#Then it asigns the number it tested to even or odd then prints them
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+evens = []
+odds = []
+print("This is the original array:")
+print(numbers)
+
+for x in numbers:  
+    if x % 2 == 0:
+        evens.append(x)
+    if x % 2 == 1:
+        odds.append(x)
+print("These are the odd values in the array:")
+print(odds)
+print("These are the even values in the array:")
+print(evens)
+print()
+
+
+
+#Number Statistics:
+#This code loops through an array then adds each value to a number
+#Then it prints the final number to get the sum
+sumNumbers = [1,2,3,4,5,6,7,8,9,10,11,12,13] 
+sum2 = 0
+for x in sumNumbers:
+    sum2= sum2+x
+print("the sum of the list is:") 
+print(sum2)
+
+#This code finds the length, the amount of numbers, in the array list
+#Then is divides te\he sum by the length to get the average
+avg=0
+length = len(sumNumbers)
+avg = sum2/length
+print("The average of the list is ")
+print(avg)
+
+#This code uses the built in max function and sets it equal to y
+#then it prints y
+#W3school showed me the syntax for the max function
+y=max(sumNumbers)
+print("The max value is ")
+print(y)
+
+#This code uses the min function then prints the min value
+v=min(sumNumbers)
+print("The minimum value of the list is ")
+print(v)
+print()
+
+
+
+#Element Finder:
+#this code looks through an array called lists
+#It sees if the number 28 is an element in the array
+#It either prints that it is in the list or it isn't
+list = [1,4,5,6,8,9,2,67,87,43]
+
+x=28
+print("The number we are testing is ")
+print(x)
+
+if x in list:
+    print("The number is in the list")
+else:
+    print("The number is not in the list")
+print()
+
+
+
+
+#2. String manipulation (for-each, loops):
+
+#Vowel/Consonant Counter:
+#This code uses a forloop to go through each character in String
+#Then it sees if the characters have a vowel or consonant
+#Then it adds them to the count and prints the count at the end
+String = "Birds are cool"
+Vowels = "a,e,i,o,u,A,E,I,O,U"
+Consonants = "s,S,z,Z,x,X,c,C,v,V,b,B,n,N,m,M,l,L,k,K,j,J,h,H,g,G,f,F,d,D,q,Q,w,W,r,R,t,T,y,Y,p,P"
+vowelCount = 0
+consonantsCount = 0
+
+for char in String:
+    if char in Vowels:
+        vowelCount = vowelCount+1
+    elif char in Consonants:
+        consonantsCount = consonantsCount+1
+
+print("There are " + str(consonantsCount) + " consonants and " + str(vowelCount) + " vowels in the string: " + String)
+print()
+
+
+#Palindrome Checker:
+#This code has a string and then reverses the string
+#It sets the reversed string equal to text and then checks to see if text is equal to String
+#If they are equal, the string is a palindrome and vice versa
+String = "racecar"
+text = String[::-1]
+if text == String:
+    print("The string: " + String + " is a palindrome")
+else:
+    print ("The string: " + String + " is not a palindrome")
+print()
+
+
+
+
+
+#3. Data analysis (lists, dictionaries):
+
+#Student Grade Analysis:
+students = [ {"name": "Alice", "grades": [85, 90, 78]}, 
+            {"name": "Bob", "grades": [95, 82, 98]}, 
+            {"name": "Charlie", "grades": [70, 85, 92]} ]
+for student in students:
+     averageGrade = 0
+     averageGrade=((sum(student["grades"]))/len(student["grades"]))
+     print(student.get("name")+ " has an average grade of " + (str(averageGrade)))
+     print()
+
+
+#Movie Rating Analysis:
+movies = [ {"title": "The Shawshank Redemption", "genre": "Drama", "rating": 9.3}, 
+          {"title": "The Godfather", "genre": "Crime", "rating": 9.2}, 
+          {"title": "The Dark Knight", "genre": "Action", "rating": 9.0}, 
+          {"title": "Pulp Fiction", "genre": "Crime", "rating": 8.9}, 
+          {"title": "Schindler's List", "genre": "Drama", "rating": 8.9} ]
+
+rating = 0
+for movie in movies:
+    if movie.get("rating") > rating:
+        rating = movie.get("rating")
+        title = movie["title"]
+        genre = movie["genre"]
+
+print("The movie with highest rating: movie name: " + str(title)+ " genre: " + str(genre) + ", rating: " + str(rating))
+print()
